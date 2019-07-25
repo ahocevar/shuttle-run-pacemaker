@@ -1,6 +1,6 @@
 (function() {
   var stageOptions = [[7.5, 9, 10.5, 12, 13.5, 15], [7.5, 8.5, 9.5, 10.5, 11.5, 12.5]];
-  var stageTime = 3;
+  var minPerStage = 3;
   var i = -1;
 
   var stages = stageOptions[0];
@@ -16,6 +16,7 @@
   });
 
   var distRemaining = 0;
+  var secPer20m;
   function firstStage() {
     i = -1;
     nextStage();
@@ -27,8 +28,8 @@
       $('#start').addClass('btn-success').removeClass('btn-danger').removeClass('btn-success');
       $('#start').html('<span class="glyphicon glyphicon-refresh"></span> Reload');
     } else {
-      var secPer20m = 20 / stages[i] / 3.6;
-      distRemaining = Math.ceil(stageTime * 60 / secPer20m / 20) * 20;
+      secPer20m = 20 / (stages[i] / 3.6);
+      distRemaining = Math.ceil(60 / secPer20m * minPerStage) * 20;
       $('#start').addClass('btn-success').removeClass('btn-danger').removeClass('btn-default');
       $('#start').html('<span class="glyphicon glyphicon-play"></span> Start');
       $('#stage').html('Stage ' + (i + 1) + ' &mdash; ' + stages[i] + ' km/h');
@@ -57,7 +58,7 @@
           window.setTimeout(sound.play.bind(sound), 1000);
           nextStage();
         }
-      }, 20 / (stages[i] / 3.6) * 1000);
+      }, secPer20m * 1000);
     } else if ($('#start').html().indexOf('Stop') > -1) {
       window.clearInterval(interval);
       nextStage();
