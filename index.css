@@ -1,0 +1,31 @@
+#stages, #dropdownMenu1 {
+  width: 100%;
+  text-align: center;
+}
+
+.blink {
+  -webkit-animation: blink 2s infinite;
+  -moz-animation: blink 2s infinite;
+  animation: blink 2s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {opacity:0;}
+  40% {opacity:1;}
+  60% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@-moz-keyframes blink {
+  0% {opacity:0;}
+  40% {opacity:1;}
+  60% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@keyframes blink {
+  0% {opacity:0;}
+  40% {opacity:1;}
+  60% {opacity:1;}
+  100% {opacity:0;}
+}

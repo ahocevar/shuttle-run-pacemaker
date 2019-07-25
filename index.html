@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html manifest="lactate-test-pacemaker.appcache" lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Lactate Threshold Test Pacemaker for Runners</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <center class="container-fluid">
+    <br>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Lactate Threshold Test Pacemaker</div>
+          <center class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"></button>
+            <ul id="stages" class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>
+          </center>
+            <ul class="list-group">
+              <li id="stage" class="list-group-item"></li>
+              <li id="dist" class="list-group-item list-group-item-info"></li>
+              <li class="list-group-item"><button id="start" class="btn btn-success"></button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </center>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/buzz/src/buzz.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
